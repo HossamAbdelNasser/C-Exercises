@@ -17,26 +17,17 @@ double htoi(char hex[]) {
         } else if (hex[i] >= 'a' && hex[i] <= 'z') {
             temp = hex[i] - 'a' + 10;
         }
-        
         result += temp * pow(16, power); 
         power--;
-
     }
-    
     return result;
 }
 
 int main() {
     
     char hex[] = {"2c9b"};
-    
     double res = htoi(hex);
-    
     printf("%.0f", res);
-    
-    //printf("%d", 'F' - 'A' + 10);
-
-    
 
     return 0;
 }
