@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+double htoi(char hex[]) {
+    
+    int len = strlen(hex);
+    double result, temp, convert;
+    
+    int power = len - 1;
+    
+    for (int i=0; i<len; i++){
+        if (hex[i] >= '0' && hex[i] <= '9') {
+            temp = hex[i] - '0';
+        } else if (hex[i] >= 'A' && hex[i] <= 'Z') {
+            temp = hex[i] - 'A' + 10;
+        } else if (hex[i] >= 'a' && hex[i] <= 'z') {
+            temp = hex[i] - 'a' + 10;
+        }
+        
+        result += temp * pow(16, power); 
+        power--;
+
+    }
+    
+    return result;
+}
+
+int main() {
+    
+    char hex[] = {"2c9b"};
+    
+    double res = htoi(hex);
+    
+    printf("%.0f", res);
+    
+    //printf("%d", 'F' - 'A' + 10);
+
+    
+
+    return 0;
+}
