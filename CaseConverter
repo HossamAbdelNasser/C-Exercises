@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+char toLower(char c) {
+    
+    char lowerC;
+    
+    if (c >= 65 && c <= 90) {
+        
+        lowerC = c + 32;
+        printf("%c\n", lowerC);
+    } else {
+        printf("Not an uppercase letter\n");
+    }
+    return lowerC;
+}
+
+char toUpper(char c) {
+    
+    char upperC;
+    
+    if (c >= 97 && c <= 122) {
+        upperC = c - 32;
+        printf("%c\n", upperC);
+    } else {
+        printf("Not an lowercase letter\n");
+    }
+    return upperC;
+}
+
+
+int main() {
+    // Write C code here
+    
+    toLower('B');
+    toUpper('a');
+
+    return 0;
+}
