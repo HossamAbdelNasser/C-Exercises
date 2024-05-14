@@ -1,8 +1,6 @@
-
 #include <stdio.h>
 
 int biSearch(int arr[], int v, int n) {
-    
     int low, high, mid;
     
      low = 0;
@@ -10,7 +8,6 @@ int biSearch(int arr[], int v, int n) {
     
     while (low <= high) {
      mid = (low + high)/2;
-    
     if (v > arr[mid]) {
         low = mid+1;
         high = n-1;
@@ -19,13 +16,10 @@ int biSearch(int arr[], int v, int n) {
     } else 
         return mid;
     }
-    
     return -1;
 }
 
-
 int main() {
-    
     int arr[7] = {1,2,3,4,5,6,7};
     int arrSize = sizeof(arr)/sizeof(arr[0]);
     int target = 8;
@@ -37,8 +31,5 @@ int main() {
     } else {
         printf("Found it at index %d", x);
     }
-    
-    
-
     return 0;
 }
