@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+char* strcon(char str1[], char str2[], int sznew) {
+    int sz1, sz2;
+    
+    char conc[sznew];
+    
+     sz1 = strlen(str1); //size of string 1
+     sz2 = strlen(str2); //size of string 2
+    
+    for (int i=0; i<sz1; i++){
+        conc[i] = str1[i];
+    }
+    
+    for (int j=sz1, z=0; j < sznew+1; j++, z++) {
+         conc[j] = str2[z];
+    }
+    
+    char *ret = conc;
+    
+    return ret;
+}
+
+int main() {
+    
+    char str1[] = "Hossam "; 
+    char str2[] = "Abdel Nasser";
+    int sz1 = strlen(str1); //size of string 1
+    int sz2 = strlen(str2); //size of string 2
+    int sznew = sz1 + sz2;
+    
+    printf("%s", strcon(str1, str2, sznew));
+
+    return 0;
+}
