@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+
+ char* reverse(char arr[]) {
+    
+    int len = strlen(arr);
+    char c;
+    
+    for (int i=0, j=len-1; i < len/2; i++, j--) {
+        c = arr[i];
+        arr[i] = arr[j];
+        arr[j] = c;
+    }
+   
+    return arr;
+}
+
+int main() {
+    
+    char str[] = "HossamAbdelNasser";
+    printf("%s", reverse(str));
+    
+    return 0;
+}
