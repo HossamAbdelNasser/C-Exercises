@@ -15,7 +15,7 @@ int substring(char* str, char* check) {
         for (int j=0; j < chSize; j++) {
             
             if (str[i+j] == check[j]){
-                result++;} else break;
+                result++;} else {result = 0; break;}
     
             if (chSize == result) return 1;
         }
