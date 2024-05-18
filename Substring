@@ -1,0 +1,36 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+
+int substring(char* str, char* check) {
+    
+    int strSize = strlen(str);
+    int chSize = strlen(check);
+    int result = 0;
+    
+    for (int i=0; i < strSize; i++){
+        
+        if (str[i] == check[0]) {
+            
+        for (int j=0; j < chSize; j++) {
+            
+            if (str[i+j] == check[j]){
+                result++;} else break;
+    
+            if (chSize == result) return 1;
+        }
+        }
+    }
+    
+    return -1;
+}
+
+
+int main() {
+    
+    char *str = "This is a test string";
+    char *check = "test";
+
+    printf("%d", substring(str, check));
+    return 0;
+}
