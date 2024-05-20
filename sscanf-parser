@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    
+    char *str = "Hossam,30,Cairo";
+    
+    char name[20]; char city[20];
+    int age;
+    
+    sscanf(str, "%[a-zA-Z ],%d,%[a-zA-Z ]", &name, &age, &city);
+    
+    
+    printf("Name: %s, Age: %d, City: %s", name, age, city);
+
+    return 0;
