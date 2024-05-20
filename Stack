@@ -4,6 +4,9 @@ int stack[100];
 int sp = 0; //stack pointer
 
 int push(int x) {
+    if (sp == 100) 
+        printf("Stack overflow\n");
+
     stack[sp] = x;
     sp++;
 }
