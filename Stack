@@ -4,21 +4,17 @@ int stack[100];
 int sp = 0; //stack pointer
 
 int push(int x) {
-    
     stack[sp] = x;
     sp++;
-    
 }
 
 int pop() {
-    
     int res = stack[sp-1];
     sp--;
     return res;
 }
 
 int main() {
-    
     push(1);
     push(2);
     push(3);
