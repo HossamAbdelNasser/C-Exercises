@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void reverse(char* x){
+    
+    if (*x) 
+    {
+         reverse(x + 1);
+         printf("%c", *x);
+    }
+}
+
+int main() {
+    
+  char *str = "Hossam Abdel Nasser";
+  reverse(str);
+
+    return 0;
+}
