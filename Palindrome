@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+int palindrome(char *s) {
+    int i;
+    
+    int len = strlen(s) - 1;
+    
+    for (i=0; i < len/2; i++) {
+        if (s[i] == s[len]){
+            len--;
+            } else {
+                return 0;
+            }
+    }
+    return 1;
+}
+
+int main() {
+    printf("%d", palindrome("rotator"));
+
+    return 0;
+}
