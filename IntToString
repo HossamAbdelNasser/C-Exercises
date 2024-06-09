@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int count(int n){
+    int t = n, count = 0;
+    
+    while (t != 0) {
+        t/=10;
+        count++;
+    }
+    
+    return count;
+}
+
+char* itoa(int n) {
+    int len = count(n), i, temp = n, rem;
+    char num[len];
+    
+    for (i=len-1; i >= 0; i--) {
+        rem = temp % 10;
+        num[i] = rem + '0';
+        temp /= 10;
+    }
+    
+    num[len] = '\0';
+    
+    char *ret = num;
+    
+    return ret;
+}
+
+int main() {
+    
+    printf("%s", itoa(49));
+    
+    return 0;
+}
