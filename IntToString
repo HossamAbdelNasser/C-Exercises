@@ -20,17 +20,14 @@ char* itoa(int n) {
         num[i] = rem + '0';
         temp /= 10;
     }
-    
+
     num[len] = '\0';
-    
     char *ret = num;
-    
+
     return ret;
 }
 
 int main() {
-    
     printf("%s", itoa(49));
-    
     return 0;
 }
