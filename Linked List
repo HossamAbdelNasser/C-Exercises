@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node {
+    int data;
+    struct Node* next;
+} node;
+
+node* head = NULL;
+node* temp = NULL;
+node* p = NULL;   
+
+node* AddNode(int x) {
+
+if (temp == NULL)
+    temp = (node*)malloc(sizeof(node)); 
+
+ temp->data = x;
+ temp->next = NULL;
+ 
+if (head == NULL) {
+    head = (node*)malloc(sizeof(node));
+    head = temp;
+    temp = (node*)malloc(sizeof(node)); 
+    head->next = temp;
+}
+
+else {
+    
+temp->next = (node*)malloc(sizeof(node));
+temp = temp->next;
+}
+
+return head;
+}
+
+void displayLL(node* h) {
+    
+    node* t = temp = (node*)malloc(sizeof(node)); 
+    t = h;
+    
+    do {
+        printf("%d ", t->data);
+        t = t->next;
+    } while (t->next != NULL);
+}
+    
+
+int main() {
+    
+    AddNode(10);
+    AddNode(20);
+    AddNode(30);
+    AddNode(40);
+    
+    displayLL(head);
+
+
+    return 0;
+}
